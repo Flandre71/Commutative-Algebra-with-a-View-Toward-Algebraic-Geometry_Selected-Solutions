@@ -75,9 +75,29 @@
 			$$
 			\exists m\in \mathbb{Z}^{+},s.t.\ \forall n>m,\ \exists a\in \mathbb{R},s.t.\ f_{n}=\sum_{k=1}^{m} a_{k}f_{k},\ \mathrm{for}\ a_{k}\in R
 			$$ 
-			Therefore the ascending chain $\left\{ N_{k} \right\} $ termiante!.
+			Therefore the ascending chain $\left\{ N_{k} \right\} $ termiante!
 	\end{enumerate}
 	\qed
+\end{exercise}
+
+\begin{exercise}
+	Suppose by contradictory that the proposition is wrong, and we denote the set of ideal having infinte amount of minimal prime ideals by $\Sigma$.
+
+	Since $N$ is noetherian, we may pick out a maximal ideal $I\in \Sigma$.
+	If $I$ is prime, $I$ is the unique minimal prime ideal over itself, contradictory.
+	On the otherhand, if $I$ is not prime. Then
+	$$
+	\exists a,b\in R,s.t.\ ab\in I,a,b \not\in I
+	$$ 
+	Consider $J_1=(I,a)$ and $J_2=(I,b)$.
+	For any minimal prime ideal $J\supseteq I$, since it's prime, $ab\in I\subseteq J$ must induce $a\in J$ or $b\in J$, i.e. $J$ is a minimal prime over $J_1$ or $J_2$.
+
+	Because there're infinte many amount of $J$, we see there'll be at least one of the ideal among $J_1,J_2$, which has infinte amount of minimal prime ideals, contradicting the maximality of $I$.
+	\qed
+\end{exercise}
+
+\begin{exercise}
+	
 \end{exercise}
 
 \end{document}
