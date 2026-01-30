@@ -17,6 +17,7 @@
 	{}
 \theoremstyle{breakstyle}
 \newtheorem{exercise}{Exercise}[section]
+\DeclareMathOperator{\rad}{rad}
 \title{Chapter 1 - Roots of Commutative Algebra}
 \setlist[enumerate,1]{
     label=(\roman*), 
@@ -342,6 +343,80 @@ x_1^{a_1}\ldots x_{r}^{a_{r}}
 	\emph{(I am wondering where was the condition $\left| G \right|<\infty $ used.)}
 	\end{enumerate}
 	\qed
+\end{exercise}
+
+\begin{exercise}
+    \leavevmode \vspace{-\baselineskip}
+    \begin{enumerate}[label=({\alph*})]
+        \item $\forall x\in \mathcal{X},Z(I(x))\ge x$, so
+            $$
+            I(Z(I(x)))\le I(x)
+            $$
+            On the other hand, by viewing $I(x)$ as an element in $X$,
+            $$
+            I(x)\le I(Z(I(x)))
+            $$
+            So $I(x)=I(Z(I(x)))$.
+
+            Now we can see $I$ is a bijective map
+            $$
+            I:Z(\mathcal{I})\longrightarrow I(\mathcal{X})
+            $$
+            Whose inverse is $Z$.
+            Indeed for $\forall x=Z(i)\in Z(\mathcal{I}),I(x)=I(Z(i))$, $x$ correspond to $I(x)$.
+            And for $\forall i\in I(\mathcal{X})$,
+            there's a unique $Z(i)\in Z(\mathcal{I})$ correspond to it.
+        \item \emph{(I suppose there's a typo in the exercise: it should be "formal radical be in the form} $I(X)$ \emph{for some set }$X\subseteq k^{n}$\emph{.)}
+
+            Denote the set of formal radicals of  $k^{n}$ by $\mathcal{I}$ and the set of algebraic subsets of $k^{n}$ by $\mathcal{X}$.
+            The definition of "formal radical" guarantees that $\forall i\in \mathcal{I},Z(i)\in \mathcal{X}$.
+
+            Now $I$ and $Z$ are maps between $\mathcal{X,I}$ which satisfy the contravariant condition in \emph{(i)}.
+            Also, it's well-know that $IZ,ZI$ are increasing functions (see [Abstract Algebra - D\&F] Sect-15.1,Sec-15.2).
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+    \emph{(Trivial.)}
+
+    \emph{(Such sets that cannot be written into proper union of smaller algebraic sets are called algebraic varieties, and such property is called "irreducible".)}
+
+    \begin{enumerate}[label=({\roman*})]
+        \item 
+            For prime ideal $\mathfrak{p}\in\rad(S)$, we need to prove $Z(\mathfrak{p})$ is irreducible.
+
+            We assume that $\exists V_1,V_2\subseteq \mathbb{A}^{r},\text{s.t. }Z(\mathfrak{p})=V_1\cup V_2$ is a proper union.
+            Now consider $f_1\in I(V_1\backslash V_2),f_2\in I(V_2\backslash V_1)$.
+            $f_1f_2$ vanish on $V_1\cup V_2$, so
+            $$
+            f_1f_2\in I(V_1\cup V_2)=\mathfrak{p}
+            $$
+            But neither $f_1$ nor $f_2$ can be an element of $\mathfrak{p}$, which makes a contradictory.
+        \item 
+            For affine variety $V\subseteq \mathbb{A}^{r}$, let $\mathfrak{i}=I(V)$, we'll prove $\mathfrak{i}$ is prime:
+
+            Suppose $\exists f_1,f_2\in S,\text{s.t. }$ 
+            $$
+            f_1,f_2\not\in \mathfrak{i},f_1f_2\in \mathfrak{i}
+            $$
+            Then
+            $$
+            \left( f_1,\mathfrak{i} \right) \supsetneq \mathfrak{i}
+            $$
+            $$
+            Z(\left( f_1,\mathfrak{i} \right ))\subsetneq Z(i)=V
+            $$
+            Similarly
+            $$
+            Z(\left( f_2,\mathfrak{i} \right ))\subsetneq V
+            $$
+            But we have
+            $$
+            Z(\left( f_1,\mathfrak{i} \right) )\cup Z(\left( f_2,\mathfrak{i} \right) )=Z(\left( f_1f_2,\mathfrak{i} \right) )=Z(\mathfrak{i})=V
+            $$
+            So $V$ was reduced into $Z(\left( f_1,\mathfrak{i} \right) )\cup Z(\left( f_2,\mathfrak{i} \right) )$ as a proper union, contradictory!
+    \end{enumerate}
+    \qed
 \end{exercise}
 
 \end{document}
