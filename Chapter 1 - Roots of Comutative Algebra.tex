@@ -6,6 +6,7 @@
 \usepackage{amsmath, amssymb}
 \usepackage{amsthm}
 \usepackage{enumitem}
+\usepackage{mathrsfs}
 \newtheoremstyle{breakstyle}
 	{5pt}
 	{10pt}
@@ -417,6 +418,44 @@ x_1^{a_1}\ldots x_{r}^{a_{r}}
             So $V$ was reduced into $Z(\left( f_1,\mathfrak{i} \right) )\cup Z(\left( f_2,\mathfrak{i} \right) )$ as a proper union, contradictory!
     \end{enumerate}
     \qed
+\end{exercise}
+
+\begin{exercise}
+    \emph{(What's the field? Maybe I'll just use} $k$\emph{.)}
+    \begin{enumerate}[label=({\roman*})]
+        \item 
+            Denote the circle and parabola by $x^2+(y-r)^2-r^2=0,x^2-2py=0$ respectively.
+            The maximal ideal under which the two curve vanish is $\left( (x^2+y^2-2ry),(x^2-2py) \right) $,
+            therefore the coordinate ring of it is
+            $$
+            k[\mathbb{A}^2] / \left( (x^2+y^2-2ry),(x^2-2py) \right) 
+            $$
+        \item
+            Denote the two line by
+            $$
+            \mathscr{L}_{1}:
+            \begin{cases}
+                A_1x+B_1y+C_1z+D_1=0\\
+                A_2x+B_2y+C_2z+D_2=0
+            \end{cases}
+            $$
+            $$
+            \mathscr{L}_{2}:
+            \begin{cases}
+                A_3x+B_3y+C_3z+D_3=0\\
+                A_4x+B_4y+C_4z+D_4=0
+            \end{cases}
+            $$
+            The maximal ideal under which $\mathscr{L}_{1},\mathscr{L}_{2}$ vanish would be
+            $$
+            \mathcal{I}=
+            \left( (A_1x+B_1y+C_1z+D_1)(A_2x+B_2y+C_2z+D_2),(A_3x+B_3y+C_3z+D_3)(A_4x+B_4y+C_4z+D_4) \right) 
+            $$
+            So the required coordinate ring would be
+            $$
+            k[\mathbb{A}^3]/\mathcal{I}
+            $$
+    \end{enumerate}
 \end{exercise}
 
 \end{document}
